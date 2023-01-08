@@ -1,7 +1,17 @@
-import {apiKey, apiAppId} from './secrets.js'
+import {apiAppId, apiKey} from './secrets.js';
 
 const request = {
-    query: 'recipe text: 100g of flour, 100g of bananas and 300g of yougurt.'
+    query: `
+	2	eggs
+    50g	sugar
+    125g	salted butter
+    125g	dark chocolate of your choice (but choose a good one)
+    1 tbsp	cocoa powder
+    1 tbsp	cornflour or potato flour
+    100g	sweet orange marmalade (ideally chopped)
+    zest of 1 orange
+    2 tbsp	coffee liqueur
+` 
 }
 
 fetch('https://trackapi.nutritionix.com/v2/natural/nutrients', {
