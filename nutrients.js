@@ -1,17 +1,17 @@
-const secrets = require('./configuration/secrets.js');
+importScripts('./configuration/secrets.js');
 
 /**
  * [Calculates recipe nutritients based on english text.]
  * @param {[string]} recipe
  */
-async function recipeNutritients(recipe) {
+async function recipeNutrients(recipe) {
 
     return fetch('https://trackapi.nutritionix.com/v2/natural/nutrients', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'x-app-id': secrets.apiAppId,
-            'x-app-key': secrets.apiKey,
+            'x-app-id': apiAppId,
+            'x-app-key': apiKey,
             'x-remote-user-id': '0'
         },
         body: JSON.stringify({
@@ -45,6 +45,3 @@ async function recipeNutritients(recipe) {
 
         })
 }
-
-//Unittests
-module.exports = recipeNutritients;
