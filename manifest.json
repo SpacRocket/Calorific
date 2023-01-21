@@ -15,7 +15,8 @@
       "js": ["scripts/content.js"],
       "matches": [
         "*://*/*"
-      ]
+      ],
+      "css": ["table.css"]
     }
   ],
   "commands": {

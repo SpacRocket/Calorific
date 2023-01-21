@@ -1,0 +1,46 @@
+table#nutriTable { 
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-family: Agenda-Light, sans-serif;
+    font-weight: 100; 
+    background: #333; color: #fff;
+    text-rendering: optimizeLegibility;
+    border-radius: 5px; 
+  }
+  table#nutriTable caption { 
+    font-size: 2rem; color: #444;
+    margin: 1rem;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/miyazaki.png), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/miyazaki2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left, center right; 
+  }
+  table#nutriTable thead th { font-weight: 600; }
+  table#nutriTable thead th, table#nutriTable tbody td { 
+    padding: .8rem; font-size: 1.4rem;
+  }
+  table#nutriTable tbody td { 
+    padding: .8rem; font-size: 1.4rem;
+    color: #444; background: #eee; 
+  }
+  table#nutriTable tbody tr:not(:last-child) { 
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;  
+  }
+  
+  @media screen and (max-width: 600px) {
+    table#nutriTable caption { background-image: none; }
+    table#nutriTable thead { display: none; }
+    table#nutriTable tbody td { 
+      display: block; padding: .6rem; 
+    }
+    table#nutriTable tbody tr td:first-child { 
+      background: #666; color: #fff; 
+    }
+      table#nutriTable tbody td:before { 
+      content: attr(data-th); 
+      font-weight: bold;
+      display: inline-block;
+      width: 6rem;  
+    }
+  }
