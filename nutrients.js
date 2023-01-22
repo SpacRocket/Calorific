@@ -1,11 +1,40 @@
 importScripts('./configuration/secrets.js');
 
 /**
+ * [Check if the string is in different language]
+ * @param {[string]} text
+ */
+async function getEnglishText(textForTranslation) {
+    return fetch('https://api-free.deepl.com/v2/translate', {
+        method: 'POST',
+        headers: {
+            'Authorization': deeplKey,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            text: [textForTranslation],
+            target_lang: 'EN'
+        })
+    }).then(
+        response => {
+            return response.json()
+        }
+    ).then(
+        jsonConv => {
+            console.log(jsonConv);
+            return jsonConv.translations[0].text;
+        }
+    );
+    ;
+
+}
+
+/**
  * [Calculates recipe nutritients based on english text.]
  * @param {[string]} recipe
  */
 async function recipeNutrients(recipe) {
-
+    recipe = await getEnglishText(recipe);
     return fetch('https://trackapi.nutritionix.com/v2/natural/nutrients', {
         method: 'POST',
         headers: {

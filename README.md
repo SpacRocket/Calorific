@@ -6,8 +6,9 @@ ToDo:
   - Pick text and then get nutritients. /DONE
   - Content script modification so that underneath there is macro table. /DONE
   - BUG with duplication of tables. /DONE
-- Automatic translation to english, because API supports only english. ( deepl seems to be ok )
+- Automatic translation to english, because API supports only english. ( deepl seems to be ok ) /DONE
 - Table that enables to divide by servings.
+
 - Safari extention:
   - Migrate it to the Safari too.
 - Yazio or Fitatu integration.
